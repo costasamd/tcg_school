@@ -1,0 +1,47 @@
+:root {
+    --primary: #000000;
+    --secondary: #ffffff;
+    --accent: #ffd700;
+    --extracolor: #eeeeee;
+
+    --altfont: "Grape Nuts";
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+    padding: .5rem;
+    border: solid 2px var(--secondary);
+    background-color: var(--primary);
+
+}
+
+#navbar a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: .3s;
+}
+
+#navbar .active {
+    background-color: var(--primary);
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+#menuHam {
+    display: none;
+}

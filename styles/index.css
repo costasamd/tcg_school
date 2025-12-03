@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+:root{
+    --primary:#000000;
+    --secondary: #ffffff;
+    --accent: #ffd700;
+    --extracolor: #eeeeee;
+
+    --altfont: "Grape Nuts";
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+header span{
+    font-size: 2rem;
+    text-align: center;
+}
+
+#hero{
+    width: 100%;
+}
+#hero img{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+h1, h2{
+    font-family: var(--altfont);
+    font-size: 3rem;
+    text-align: center;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+#tiles{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: .3rem;
+    background-color: var(--extracolor);
+    overflow: hidden;
+}
+
+#even{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid var(--accent);
+    width: 100%;
+    background-color: var(--accent);
+}
+
+#rul{
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    border: 5px solid var(--primary);
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+#rul a{
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--accent);
+}
+
+#hig{
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid var(--primary);
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+#hig img{
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: start;
+}
+
+#new{
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    border: 5px solid var(--accent);
+    width: 100%;
+    background-color: var(--accent);
+}
+
+.tiles a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    background-color: var(--primary);
+    color: var(--extracolor);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--primary);
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+#visits{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
