@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+:root{
+    --primary:#000000;
+    --secondary: #ffffff;
+    --accent: #ffd700;
+    --extracolor: #eeeeee;
+
+    --altfont: "Grape Nuts";
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+header span{
+    font-size: 2rem;
+    text-align: center;
+}
+
+h1{
+    font-family: var(--altfont);
+    font-size: 3rem;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+}
+
+main h1{
+    grid-column: 1 / 3;
+    text-align: center;
+}
+
+#darkmagician img{
+    grid-column: 1 / 2;
+    border: 5px solid var(--primary);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+form {
+    width: 650px;
+    margin: 3rem auto;
+    padding: 1rem;
+    border: 1px solid rgba(0 0 0 / 0.1);
+    background-color: var(--primary-color);
+    display: grid;
+}
+
+fieldset{
+    display: grid;
+    grid-gap: .5rem;
+    margin: .5rem;
+    border: 1px solid rgba(0 0 0 / 0.2);
+    padding: 1rem;
+}
+
+legend {
+    padding: .5rem;
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+label,
+button,
+textarea {
+    font-size: 1.1rem;
+}
+
+input {
+    height: 45px;
+    font-size: 1.2rem;
+}
+
+button {
+    margin: 1rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-size: 1.5rem;
+    height: 45px;
+}
+
+button:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+:required {
+    border: 2px solid red;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--primary);
+}
+
+footer p {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}

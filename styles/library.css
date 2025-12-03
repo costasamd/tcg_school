@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+:root{
+    --primary:#000000;
+    --secondary: #ffffff;
+    --accent: #ffd700;
+    --extracolor: #eeeeee;
+
+    --altfont: "Grape Nuts";
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+header span{
+    font-size: 2rem;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-family: var(--altfont);
+}
+
+#npbtn{
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#npbtn:hover{
+    background-color: var(--secondary);
+    color: var(--primary);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+section:hover{
+    transform: scale(1.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+section p{
+    text-align: center;
+    width: 150px;    
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--primary);
+}
+
+footer p {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}

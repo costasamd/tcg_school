@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCG School - home page</title>
+    <link rel="icon" href="images/favicon.ico">
+    <meta name="author" content="Samuel Dias Costa">
+    <meta name="description" content="This page contain links and guide for every new player of the tcg games, it is focused on YGO TCG as a start.">
+
+    <!-- Google Fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+
+    <!--Styles link-->
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/navresponse.css">
+    <link rel="stylesheet" href="styles/index_small.css">
+
+    <!--Scipts link-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
+    <script defer src="scripts/date.js"></script>
+    <script defer src="scripts/nav.js"></script>
+    <script type="module" src="scripts/index.js"></script>
+
+    <!--Facebook social links-->
+    <!--Social Media meta - Facebook -->
+    <meta property="og:title" content="TCG School">
+    <meta property="og:description" content="Welcome to the TCG School page.">
+    <meta property="og:image" content="https://costasamd.github.io/wdd231/final/images/ygo_hero.webp">
+    <meta property="og:url" content="https://costasamd.github.io/wdd231/final">
+
+</head>
+<body>
+    <header>
+        <img src="./images/milleniumring.webp" alt="logo" width="150" height="150">
+        <span>TCG School</span>
+    
+        <a id="menuHam" href="#"></a>
+        <nav id="navbar">
+            <ul class="navigation">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="library.html">Library</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+    <main>
+        <h1>Welcome to TCG School</h1>
+        <div id="hero">
+            <img src="images/ygo_hero.webp" alt="Offical TCG banner from Konami" width="1920" height="500" loading="lazy">
+        </div>
+        <div id="tiles">
+            <div id="even">
+                <h2>Events</h2>
+                <div class="tiles">
+                    <p>There are many Events all around the world</p>
+                    <p>but if you want to be at the top, you want to adventure</p>
+                    <p>in the "Qualifiers" and then claim your place in the "World Championship</p>
+                    <p>below is a link to the official Konami tournament store locator.</p>
+                    <a href="https://www.yugioh-card.com/en/events/ots-locations/">Find Now</a>
+                </div>
+            </div>
+            <div id="rul">
+                <!--place dinamically with js-->
+                <h2>Rules</h2>
+                <div id="bookrules"></div>
+                <a href="ygo_rules.pdf" download>download</a>
+                
+            </div>
+            <div id="hig">
+                <!--placed dinamically with js-->
+                <h2>Highlight Card</h2>
+                <div id="lightcard"></div>
+            </div>
+            <div id="new">
+                <h2>New Products</h2>
+                <div class="tiles">
+                    <p>Yugi-oh tcg is a very much live game that still evolving.</p>
+                    <p>Konami still creating new cards and products for this game, even with ups and downs</p>
+                    <p>in the number of players, tournaments still carry on and there competitiveness still rising.</p>
+                    <p>below is a link to the Official Yugi-Oh Products.</p>
+                    <a href="https://www.yugioh-card.com/en/products/">Find Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><span id="currentyear"></span>| Samuel Dias Costa - Manchester - UK</p>
+        <p><span id="lastModified"></span></p>
+        <p><span id="visits"></span></p>
+    </footer>
+</body>
+</html>
