@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCG School - home page</title>
+    <link rel="icon" href="images/favicon.ico">
+    <meta name="author" content="Samuel Dias Costa">
+    <meta name="description" content="This page contain links and guide for every new player of the tcg games, it is focused on YGO TCG as a start.">
+
+    <!-- Google Fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+
+    <!--Styles link-->
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/navresponse.css">
+    <link rel="stylesheet" href="styles/index_small.css">
+
+    <!--Scipts link-->
+
+    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/randomMTG.js"></script>
+
+    <!--Facebook social links-->
+    <!--Social Media meta - Facebook -->
+    <meta property="og:title" content="TCG School">
+    <meta property="og:description" content="Welcome to the TCG School page.">
+    <meta property="og:image" content="https://costasamd.github.io/wdd231/final/images/ygo_hero.webp">
+    <meta property="og:url" content="https://costasamd.github.io/wdd231/final">
+
+</head>
+<body>
+    
+    <header id="header"></header>
+
+    <main>
+        <h1>Welcome to TCG School</h1>
+        <div id="hero">
+            <img src="images/mtg_logo.jpg" alt="Offical TCG banner for Magic The Gathering" width="1000" height="500" loading="lazy">
+        </div>
+        <div id="tiles">
+            <div id="even">
+                <h2>My Collection</h2>
+                <div class="tiles">
+                    <p>Display all the cards you already have</p>
+                    <a href="collection.html"">Check Collection</a>
+
+                </div>
+            </div>
+            <div id="rul">
+                <!--place dinamically with js-->
+                <h2>Learn</h2>
+                <div id="bookrules"></div>
+                <a href="https://magic.wizards.com/en/how-to-play" download>Official Guide</a>
+                
+            </div>
+            <div id="hig">
+                <!--placed dinamically with js-->
+                <h2>Highlight Card</h2>
+                <div id="lightcard"></div>
+            </div>
+            <div id="new">
+                <h2>What look for...</h2>
+                <div class="tiles">
+                    <p>Magic TCG is a very much alive game that still evolving.</p>
+                    <p>below is a link to the Official Pokemon Cards Gallery.</p>
+                    <a href="https://magic.wizards.com/en/news">Offical News</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>
