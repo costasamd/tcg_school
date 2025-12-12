@@ -18,9 +18,8 @@
     <link rel="stylesheet" href="styles/navresponse.css">
 
     <!--Scipts link-->
-    <script defer src="scripts/date.js"></script>
-    <script defer src="scripts/nav.js"></script>
-    <script defer src="scripts/library_v2.js"></script>
+    <script type="module" src="scripts/library_v2.js"></script>
+    <script type="module" src="scripts/main.js"></script>
     
 
     <!--Facebook social links-->
@@ -32,36 +31,24 @@
 
 </head>
 <body>
-    <header>
-        <img src="images/milleniumring.webp" alt="logo" width="150" height="150">
-        <span>TCG School</span>
-    
-        <a id="menuHam" href="#"></a>
-        <nav id="navbar">
-            <ul class="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="library" class="active">Library</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    
-    </header>
+    <header id="header"></header>
+
     <main>
         <h1>Welcome to the Cards Library</h1>
 
-        <button id="npbtn">about Library</button>
-        <dialog id="info">
-            <p>The Library is not complete yet,</p>
-            <p>you have 100 cards, but we will add more soon</p>
-            <button id="npClose">Close</button>
-        </dialog>
+        <select id="tcg">
+            <option value="ygo">Yugi-oh</option>
+            <option value="mtg">Magic: The Gathering</option>
+            </option>
+        </select>
+
+        <input type="text" id="cardSearch" placeholder="Type a card name"/>
 
         <div id="cards"></div>
+
     </main>
-    <footer>
-        <p><span id="currentyear"></span>| Samuel Dias Costa - Manchester - UK</p>
-        <p><span id="lastModified"></span></p>
-        <p><span id="visits"></span></p>
-    </footer>
+
+    <footer id="footer"></footer>
+
 </body>
 </html>
