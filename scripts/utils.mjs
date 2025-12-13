@@ -11,10 +11,10 @@ async function loadTemplate(path) {
     return template;
 }
 export async function headerFooter() {
-    const headerTemplate = await loadTemplate('/html/header.html');
+    const headerTemplate = await loadTemplate('partials/header.html');
     const header = document.querySelector('#header');
 
-    const footerTemplate = await loadTemplate('/html/footer.html');
+    const footerTemplate = await loadTemplate('partials/footer.html');
     const footer = document.querySelector('#footer');
 
     renderWithTemplate(headerTemplate, header);
