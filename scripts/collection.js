@@ -20,21 +20,21 @@ function renderCollection() {
         return;
     }
 
-    collected.forEach(card => {
+    collected.forEach(collectionCard => {
         const cardFrame = document.createElement('section');
         const cardName = document.createElement('p');
-        cardName.textContent = card.name;
+        cardName.textContent = collectionCard.name;
 
         const cardImg = document.createElement('img');
-        cardImg.src = card.image;
-        cardImg.alt = card.name;
+        cardImg.src = collectionCard.image;
+        cardImg.alt = collectionCard.name;
         cardImg.width = 100;
         cardImg.height = 150;
 
         const removeBtn = document.createElement('button');
         removeBtn.textContent = 'remove';
         removeBtn.addEventListener('click', () => {
-            removeFromCollection(card.id, currentCollection);
+            removeFromCollection(collectionCard.id, currentCollection);
             
             renderCollection();
         });
