@@ -202,20 +202,41 @@ function renderPagination(totalCards) {
 
     const totalPages = Math.ceil(totalCards / cardPerPage);
 
-    for (let i = 1; i <= totalPages; i++){
-        const button = document.createElement('button');
-        button.textContent = i;
+    if (totalPages <= 1) return;
 
-        if (i === page) button.disabled = true;
+    const select = document.createElement('select');
+    select.id = 'pageSelect';
 
-        button.addEventListener('click', () => {
-            page = i;
-            displayCards(currentTCG, currentData);
-        });
-
-        pageNav.appendChild(button);
+    for (let i = 1; i <= totalPages; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = `Page ${i}`;
+        if (i === page) option.selected = true;
+        select.append(option);
     }
+
+    select.addEventListener('change', () => {
+        page = parseInt(select.value);
+        displayCards(currentTCG, currentData);
+    });
+
+    pageNav.appendChild(select);
+
+    // for (let i = 1; i <= totalPages; i++){
+    //     const button = document.createElement('button');
+    //     button.textContent = i;
+
+    //     if (i === page) button.disabled = true;
+
+    //     button.addEventListener('click', () => {
+    //         page = i;
+    //         displayCards(currentTCG, currentData);
+    //     });
+
+    //     pageNav.appendChild(button);
+    // }
 }
 
 
 getCardsLibrary();
+

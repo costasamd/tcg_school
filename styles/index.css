@@ -213,12 +213,11 @@ p{
     justify-content: center;
     background: var(--secondary);
     border-radius: 8px;
-    padding: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
     min-height: 300px;
-    min-width: 170px;
+    
 }
 
 #cards section:hover{
