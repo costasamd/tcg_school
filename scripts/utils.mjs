@@ -19,6 +19,31 @@ export async function headerFooter() {
 
     renderWithTemplate(headerTemplate, header);
     renderWithTemplate(footerTemplate, footer);
+
+    initResponsiveNav();
+}
+
+function initResponsiveNav() {
+    const mainnav = document.querySelector('.navigation');
+    const hambutton = document.querySelector('#menuHam');
+
+    if (!hambutton || !mainnav) return;
+
+    //add event listener//
+
+    hambutton.addEventListener('click', (e) => {
+        e.preventDefault();
+        mainnav.classList.toggle('show');
+        hambutton.classList.toggle('show');
+    });
+
+    //----footer info-----//
+    const year = document.getElementById('currentyear');
+    const today = new Date();
+
+    year.innerHTML = `${today.getFullYear()} | Manchester UK`;
+
+
 }
 
 //---------------add, save, retrieve user data to/from local storage-----------------
