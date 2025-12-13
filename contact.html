@@ -14,14 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
 
     <!--Styles link-->
-    <link rel="stylesheet" href="styles/contact.css">
-    <link rel="stylesheet" href="styles/nav.css">
-    <link rel="stylesheet" href="styles/navresponse.css">
-    <link rel="stylesheet" href="styles/contact_small.css">
+    <link rel="stylesheet" href="styles/index.css">
+    
 
     <!--Scipts link-->
-    <script defer src="scripts/date.js"></script>
-    <script defer src="scripts/nav.js"></script>
+    
     <script type="module" src="scripts/main.js"></script>
     
 
@@ -38,26 +35,27 @@
     <header id="header"></header>
 
     <main>
-        <h1>Contact Us</h1>
-        <div id="darkmagician">
-            <img src="images/darkmagician.webp" alt="Dark Magician card" width="300" height="420">
-        </div>
-        <div id="form">
-            <form action="thankyou.html" method="get">
-                <fieldset>
-                    <legend>Contact Us</legend>
-                    <label for="firstname">First Name:</label>
-                    <input name="firstname" id="firstname" type="text" autocomplete="given-name" required>
-                    <label for="lastname">Last Name:</label>
-                    <input name="lastname" id="lastname" type="text" autocomplete="family-name" required>
-                    <label for="email">Email:</label>
-                    <input name="email" id="email" type="email" autocomplete="email" placeholder="name@name.com" required>
-                    <label for="message">Message:</label>
-                    <textarea name="message" id="message" rows="5" cols="30" placeholder="Write your message here..." required></textarea>
-                    <button type="submit">Submit</button>
-                </fieldset>
-            </form>
-
+        <div id="contact">
+            <h1>Contact Us</h1>
+            <div id="darkmagician">
+                <img src="images/darkmagician.webp" alt="Dark Magician card" width="300" height="420">
+            </div>
+            <div id="form">
+                <form action="thankyou.html" method="get">
+                    <fieldset>
+                        <legend>Contact Us</legend>
+                        <label for="firstname">First Name:</label>
+                        <input name="firstname" id="firstname" type="text" autocomplete="given-name" required>
+                        <label for="lastname">Last Name:</label>
+                        <input name="lastname" id="lastname" type="text" autocomplete="family-name" required>
+                        <label for="email">Email:</label>
+                        <input name="email" id="email" type="email" autocomplete="email" placeholder="name@name.com" required>
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" rows="5" cols="30" placeholder="Write your message here..." required></textarea>
+                        <button type="submit">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
         </div>
         
     </main>
