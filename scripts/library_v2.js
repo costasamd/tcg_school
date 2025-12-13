@@ -1,5 +1,12 @@
 import { getCollection, saveCollection, addToCollection, removeFromCollection, isInCollection } from "./utils.mjs";
 
+let currentTCG = null;
+let currentData = null;
+let page = 1;
+
+const cardPerPage = 50;
+
+
 //----------------------------API Selection -----------------------//
 
 document.querySelector('#tcg').addEventListener('change', getCardsLibrary)
@@ -8,38 +15,68 @@ document.querySelector('#tcg').addEventListener('change', getCardsLibrary)
 //---------------------------- Library Section -----------------------//
 
 async function getCardsLibrary() {
-    const typeTCG = document.querySelector('#tcg').value;
+    
+    currentTCG = document.querySelector('#tcg').value;
+    page = 1;
+
     let url = '';
 
-    if (typeTCG === 'ygo') {
-        url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0';
+    if (currentTCG === 'ygo') {
+        url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
 
         const data = await fetch(url).then(response => response.json());
+        currentData = data;
 
-        displayCards(typeTCG, data);
-        return;
+        displayCards(currentTCG, currentData);
+        
+        return;        
 
-    } else if (typeTCG === 'mtg') {
+    }
+    
+    if (currentTCG === 'mtg') {
         url = "https://api.magicthegathering.io/v1/cards";
 
         
         const data = await fetch(url).then(response => response.json());
-    
-        displayCards(typeTCG, data);
+        currentData = data;
+
+        displayCards(currentTCG, currentData);
     
         return;
     }
 }
 
+document.querySelector('#cardSearch').addEventListener('input', () => {
+    page = 1;
+    displayCards(currentTCG, currentData);
+});
+
+
 
 function displayCards(typeTCG, data) {
 
     const showCards = document.querySelector('#cards');
-    
+    const searchValue = document.querySelector('#cardSearch').value.toLowerCase();
+
     showCards.innerHTML = ''; // Clear previous results//
 
+    let cardsArray = [];
+
+    if(typeTCG === 'ygo') {
+        cardsArray = data.data.filter(card => card.name.toLowerCase().includes(searchValue));
+    } else if (typeTCG === 'mtg') {
+        cardsArray = data.cards.filter(card => card.name.toLowerCase().includes(searchValue));
+    }
+
+    // Pagination logic //
+    const start = (page - 1) * cardPerPage;
+    const end = start + cardPerPage;
+    const paginatedCards = cardsArray.slice(start, end);
+
+
+// cards display logic //
     if (typeTCG === 'ygo') {
-        data.data.forEach(card => {
+        paginatedCards.forEach(card => {
             let library = document.createElement('section');
             let cardName = document.createElement('p');
             let cardImg = document.createElement('img')
@@ -54,12 +91,8 @@ function displayCards(typeTCG, data) {
             cardImg.setAttribute('width', '100');
             cardImg.setAttribute('height', '150');
 
-            if (card.atk !== undefined) {
-                cardAttack.textContent = `Atk: ${card.atk}`;
-            }
-            if (card.def !== undefined) {
-                cardDef.textContent = `Def: ${card.def}`;
-            }
+            if (card.atk !== undefined) { cardAttack.textContent = `Atk: ${card.atk}`;}
+            if (card.def !== undefined) { cardDef.textContent = `Def: ${card.def}`;}
 
             cardDesc.textContent = `${card.desc}`;
             cardDesc.style.display = 'none';
@@ -103,7 +136,7 @@ function displayCards(typeTCG, data) {
             showCards.appendChild(library);
         })
     } else if (typeTCG === 'mtg') {
-        data.cards.forEach(card => {
+        paginatedCards.forEach(card => {
             let library = document.createElement('section');
             let cardName = document.createElement('p');
             let cardImg = document.createElement('img');
@@ -155,7 +188,28 @@ function displayCards(typeTCG, data) {
 
     }
 
+    renderPagination(cardsArray.length);
 }
 
+function renderPagination(totalCards) {
+    const paginationNav = document.querySelector('#pagination');
+    paginationNav.innerHTML = '';
+
+    const totalPages = Math.ceil(totalCards / cardPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+
+        if (i === page) button.disabled = true;
+
+            button.addEventListener('click', () => {
+                page = i;
+                displayCards(currentTCG, currentData);
+            });
+
+            paginationNav.appendChild(button);
+        }
+    }
 
 getCardsLibrary();
